@@ -5,6 +5,11 @@
 xcode-select --install
 sudo xcode-select --install
 
+# Download oh my ZSH
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Select ZSH Theme
+ZSH_THEME="arrow"
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 echo 'PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 
@@ -26,6 +31,13 @@ brew install --cask \
     spotify \
     vscode \
 
+# Mac App Store Content
+brew install mas
+
+mas install 497799835 # xCode
+mas install 634148309 # Logic
+
+
 
 # Install git 
     brew install --cask iterm2
@@ -35,4 +47,5 @@ brew install --cask \
    brew install bash-completion
    [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
    source ~/.bash_profile
-   
+
+echo "Installation complete!"
